@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+	<meta charset="utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+	<title>Carte</title>
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css" integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw==" crossorigin="" />
+
+
+	<script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js" integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA==" crossorigin=""></script>
+
+
+	<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			outline: 0
+		}
+
+		#map {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0
+		}
+
+		@media only screen and (min-width:600px) {
+
+			#wrapper {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				z-index: 400;
+				background: #fff;
+				padding: 15px
+			}
+
+			#wrapper_jogging {
+				position: absolute;
+				top: 90%;
+				bottom: 0;
+				z-index: 1000;
+				background: #fff;
+				padding: 15px;
+				max-width: 500px
+			}
+
+		}
+
+		@media only screen and (max-width:599px) {
+
+			#wrapper {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				z-index: 400;
+				background: #fff;
+				padding: 7px
+			}
+
+			#wrapper_jogging {
+				position: absolute;
+				top: 88%;
+				width: 90%;
+				height: auto;
+				bottom: 0;
+				z-index: 1000;
+				background: #fff;
+				padding: 7px
+			}
+
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			line-height: 28px;
+			font-weight: 700
+		}
+
+		.close:focus,
+
+		.close:hover {
+			color: #000;
+			text-decoration: none;
+			cursor: pointer
+		}
+
+		.recherche {
+			text-decoration: none;
+			color: red;
+			text-align: center;
+			font-family: Gotham, Helvetica Neue, Helvetica, Arial, ' sans-serif'
+		}
+
+		.jogging {
+			color: red;
+			font-family: Gotham, Helvetica Neue, Helvetica, Arial, ' sans-serif'
+		}
+	</style>
+
+	<!-- <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" /> -->
+
+</head>
+
+<body>
+
+	<div id="map"></div>
+
+
+
+	<script>
+		var map = L.map('map').setView([50.534306, 2.513563], 12);
+
+		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+		L.marker([50.534306, 2.513563]).addTo(map).bindPopup('Baptiste');
+		L.circle([50.534306, 2.513563], 10000, {color: 'red',fillColor: 'blue',fillOpacity: 0.1}).addTo(map);
+
+    L.marker([50.6086935,2.2689656]).addTo(map).bindPopup('Simon');
+    L.circle([50.6086935,2.2689656], 10000, {color: 'red',fillColor: 'blue',fillOpacity: 0.1}).addTo(map);
+
+    L.marker([50.6395937,2.4000602]).addTo(map).bindPopup('Aire');
+    L.circle([50.6395937,2.4000602], 10000, {color: 'red',fillColor: 'blue',fillOpacity: 0.1}).addTo(map);
+
+    L.marker([50.6620214,2.4369424]).addTo(map).bindPopup('Jules');
+    L.circle([50.6620214,2.4369424], 10000, {color: 'red',fillColor: 'blue',fillOpacity: 0.1}).addTo(map);
+	</script>
+
+
+</body>
+
+</html>
